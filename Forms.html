@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coursel Slide</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center text-info display-5">Create New Bus</h1>
+            <div class="row justify-content-center">
+                <img src="D:\Course backups\Web\Pradeep\images\fire1.jpg" class="mr-3" height="900px" width="150px"/>
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <form name="create" class="form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="regno">Enter the Registration number of the Bus</label>
+                            <input type="text" name="regno" class="form-control" placeholder="Registration number">
+                        </div>
+                        <div class="form-group">
+                            <label for="travels">Enter the Travel company of the Bus</label>
+                            <input type="text" name="travels" class="form-control" placeholder="Travel agency">
+                        </div>
+                        <div class="form-group">
+                            <label for="origin">Enter the Origin of the Bus</label>
+                            <input type="text" name="origin" class="form-control" placeholder="Origin">
+                        </div>
+                        <div class="form-group">
+                            <label for="stop">Enter the End point of the Bus</label>
+                            <input type="text" name="stop" class="form-control" placeholder="End Point">
+                        </div>
+                        <div class="form-group">
+                            <label for="am">Enter the amenities offered by the Bus</label>
+                            <input type="text" name="am" placeholder="Amenities" class="form-control">
+                        </div>
+                        <div class="form-checked row">
+                            <div class="form-inline col">
+                                <label for="type">Enter the TYPE of the Bus</label>
+                                <input type="radio" name="type" value="Sleeper" class="form-control-sm ml-lg-5">Sleeper
+                                <input type="radio" name="type" value="Semi Sleeper" class="form-control-sm ml-lg-5">Semi Sleeper
+                                <input type="radio" name="type" value="Ultra Delux" class="form-control-sm ml-lg-5">Ultra Delux
+                                <input type="radio" name="type" value="AC Sleeper" class="form-control-sm ml-lg-5">AC Sleeper
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="seats">Enter the count of seats in the Bus</label>
+                            <select name="seats" size="3" class="form-control">
+                                <option>Select count of seats</option>
+                                <option>30</option>
+                                <option>35</option>
+                                <option>36</option>
+                                <option>40</option>
+                                <option>42</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="price">Enter the Price of each seat</label>
+                            <input type="text" name="price" class="form-control" placeholder="Seat price">
+                        </div>
+                        <div class="form-group mt-lg-2 row justify-content-around">
+                            <button class="btn btn-outline-primary">Add</button>
+                            <button class="btn btn-outline-danger">Clear</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <img src="D:\Course backups\Web\Pradeep\images\fire1.jpg" class="ml-3" height="900px" width="150px"/>
+            </div>
+        </div>
+    </body>
+</html>
