@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Script types Demonstration - 2</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <noscript>
+            Javascript needs to be installed
+        </noscript>
+        <script>
+            <!--
+                function myOwn()
+                {
+                    alert("my own function called");
+                    console.log(document.getElementById('liter'));
+                    console.log(document.getElementById('liter').type);
+                    console.log(document.getElementById('liter').id);
+                    console.log(document.getElementById('liter').value);
+                    console.log(document.getElementById('liter').placeholder);
+                    var alpha=document.getElementById('liter').value;
+                    var beta=document.getElementById('kms').value;
+                    //document.getElementById('result').innerHTML=(beta/alpha);
+                    document.getElementById('out').value=(beta/alpha);
+                }
+            //-->
+        </script>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <input type="text" class="form-control" id="liter" placeholder="Tell us liter filled">
+                <input type="text" class="form-control" id="kms" placeholder="Tell us driven kms">
+                <!--<button class="btn btn-outline-dark" onclick="alert('button clicked')">Calculate</button> -->
+                <button class="btn btn-outline-dark" onclick="myOwn()">Calculate</button>
+                <output id="out"></output>
+            </div>
+            <p class="text-center text-success display-4" id="result"></p>
+        </div>
+    </body>
+</html>
