@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Script fat arraow function demo</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+            var hai=new Array();
+            let index;
+            function adding()
+            {
+                const one=document.getElementById('user1').value;
+                hai.push(one);
+                //alert(one+" has added to array");
+            }
+            function listing()
+            {
+                hai.map((elem,ind)=>{
+                    alert("data is "+elem+" @ "+ind);
+                })
+            }
+            function reading()
+            {
+                const one=document.getElementById('user1');
+                //const two=document.getElementById('user1');
+                hai.map((elem,ind)=>{
+                    if(ind==one.value)
+                        index=one.value;
+                        alert("index copied "+index);
+                        one.value=elem;
+                })
+            }
+            function filtering()
+            {
+                const one=Number(document.getElementById('user1').value);
+                hai.map((elem,ind)=>{
+                    if(elem<=one)
+                        alert("data is "+elem+" @ "+ind);
+                })
+            }
+            function deleting()
+            {
+                const one=Number(document.getElementById('user1').value);
+                //hai.pop(one);
+                //hai.splice(one);
+                hai=hai.filter((ele,ind,arr)=>{
+                    return one!=ind;
+                })
+                alert('deleted @ '+one);
+            }
+            function editing()
+            {
+                alert("readen index is: "+index);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid row justify-content-center">
+            <div class="my-4 col-4">
+                <input type="text" id="user1" placeholder="Enter the index/data" class="form-control">
+                
+                <div class="row justify-content-around">
+                    <button class="my-4 btn btn-primary" onclick="adding()">Add</button>
+                    <button class="my-4 btn btn-primary" onclick="listing()">List</button>
+                    <button class="my-4 btn btn-primary" onclick="reading()">Read</button>
+                    <button class="my-4 btn btn-primary" onclick="filtering()">Filter</button>
+                    <button class="my-4 btn btn-primary" onclick="deleting()">Delete</button>
+                    <button class="my-4 btn btn-primary" onclick="editing()">Edit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
