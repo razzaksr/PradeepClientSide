@@ -10,7 +10,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script>
             var hai=new Array();
-            let index;
             function adding()
             {
                 const one=document.getElementById('user1').value;
@@ -25,14 +24,19 @@
             }
             function reading()
             {
+                let index=-1;
                 const one=document.getElementById('user1');
+                //alert(one.value);
                 //const two=document.getElementById('user1');
                 hai.map((elem,ind)=>{
-                    if(ind==one.value)
-                        index=one.value;
-                        alert("index copied "+index);
+                    if(ind==Number(one.value))
+                    {
+                        index=Number(one.value);
+                        //alert("index copied "+index);
                         one.value=elem;
+                    }
                 })
+                return index;
             }
             function filtering()
             {
@@ -54,7 +58,18 @@
             }
             function editing()
             {
-                alert("readen index is: "+index);
+                let ind=reading();
+                if(ind==-1)
+                    alert('Invalid to edit');
+                else
+                {
+                    //alert('can be edited');
+                    const geting=document.getElementById('user1');
+                    const one=prompt("Tell us value to update @ index "+ind+" value "+hai[ind],"");
+                    hai[ind]=one;
+                    geting.value=hai[ind];
+                    alert('updated');
+                }
             }
         </script>
     </head>
