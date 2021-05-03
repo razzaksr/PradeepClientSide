@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Script fat arraow function demo</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            // bitwise operator: & | ^ >> <<
+
+            /*
+            2048 1024 512 256 128 64 32 16 8 4 2 1
+            0    0    0   0   0   0  1  1  0 0 0 0 >> 48>> alpha
+            0    1    1   0   0   0  0  0  0 0 0 0 >> 1536
+            0    0    0   0   0   1  0  1  1 1 0 0 >> 92>> cosmo
+            0    0    0   0   0   0  0  0  1 0 1 1 >> 11
+
+            0    0    0   0   0   1  1  0  1 1 0 0 >> 108>> alpha
+            0    0    0   0   0   0  1  1  0 0 0 0 >> 48>> Cosmo
+            0    0    0   0   0   1  0  1  1 1 0 0 >> 92>> alpha
+            0    0    0   1   1   0  1  0  0 1 0 0 >> 420
+            0    0    0   1   1   0  0  1  0 1 0 0 >> 404
+            0    0    0   0   0   0  0  1  0 1 0 1 >> 21
+            0    0    0   0   0   0  0  1  0 0 0 0 >> 16
+            0    0    0   0   1   0  0  1  1 1 0 0 >> 156
+            0    0    0   0   1   1  0  1  1 1 0 0 >> 220
+            */
+            
+            let alpha=prompt("Enter the Alpha value","");
+            let cosmo=prompt("Enter the Cosmo value","");
+            alert(alpha+" "+cosmo);// 48 92
+
+            alert(cosmo>>3);
+            alert(alpha<<5);
+
+            //alert(alpha&21);
+
+            //alert(cosmo|156);
+
+            //alert(alpha^420);
+
+            //swap by ^
+            //alpha^=cosmo;
+            //cosmo^=alpha;
+            //alpha^=cosmo;
+
+            //alert(alpha+" "+cosmo);// 48 92
+
+        </script>
+    </body>
+</html>
