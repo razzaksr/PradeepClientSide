@@ -9,32 +9,160 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="Beneficiary.js"></script>
-        <script src="MyAccount.js"></script>
+        <!--<script src="MyAccount.js"></script>-->
     </head>
     <body>
         <script>
-            let account=new MyAccount();
+            //let account=new MyAccount();
+            let list=new Array();
+            function insert()
+            {
+                alert('insert called');
+                name=document.getElementById('name').value;
+                accno=document.getElementById('accno').value;
+                ifsc=document.getElementById('ifsc').value;
+                upi=document.getElementById('upi').value;
+                let ben1=new Beneficiary(name,accno,ifsc,upi);
+                alert(ben1.name+" "+ben1.upi+" before push into array");
+                list.push(ben1);
+            }
+            function traverse()
+            {
+                document.getElementById('show').innerHTML="";
+                list.map((elem)=>{
+                    alert(elem.name+" "+elem.upi);
+                    elem.listout();
+                });
+            }
+            function sort()
+            {
+                let base1=document.getElementById('b1').checked;
+                let base2=document.getElementById('b2').checked;
+                let base3=document.getElementById('b3').checked;
+                let base4=document.getElementById('b4').checked;
+
+                alert('sort by '+base1+" "+base2+" "+base3+" "+base4);
+                for(hold=0;hold<list.length;hold++)
+                {
+                    for(com=hold+1;com<list.length;com++)
+                    {
+                        if(base1==true)
+                        {
+                            if(list[hold].name>list[com].name)
+                            {
+                                temp=list[hold]
+                                list[hold]=list[com]
+                                list[com]=temp
+                            }
+                        }
+                        else if(base2==true)
+                        {
+                            if(list[hold].accno>list[com].accno)
+                            {
+                                temp=list[hold]
+                                list[hold]=list[com]
+                                list[com]=temp
+                            }
+                        }
+                        else if(base3==true)
+                        {
+                            if(list[hold].ifsc>list[com].ifsc)
+                            {
+                                temp=list[hold]
+                                list[hold]=list[com]
+                                list[com]=temp
+                            }
+                        }
+                        else if(base4==true)
+                        {
+                            if(list[hold].upi>list[com].upi)
+                            {
+                                temp=list[hold]
+                                list[hold]=list[com]
+                                list[com]=temp
+                            }
+                        }
+                    }
+                }
+            }
+            /*function read()
+            {
+                alert('normal read has called');
+                let hai=document.getElementById('fetch').value;
+                document.getElementById('show').innerHTML="";
+                if(hai!="")
+                {
+                    hai=Number(hai)
+                    list.map((elem,ind)=>{
+                        if(ind==hai)
+                        {
+                            elem.listout();
+                        }
+                    });
+                }
+            }*/
+            function read(acc)
+            {
+                document.getElementById('show').innerHTML="";
+                if(acc)
+                {
+                    alert('read by number has called '+acc);
+                    list.map((elem)=>{
+                        if(elem.accno==acc)
+                        {
+                            elem.listout();
+                        }
+                    });
+                }
+                else if(!acc)
+                {
+                    alert('read by index has called');
+                    let hai=document.getElementById('fetch').value;
+                    document.getElementById('show').innerHTML="";
+                    if(hai!="")
+                    {
+                        hai=Number(hai)
+                        list.map((elem,ind)=>{
+                            if(ind==hai)
+                            {
+                                elem.listout();
+                            }
+                        });
+                    }
+                }
+            }
         </script>
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="my-lg-4 row justify-content-center">
                 <div class="col-md-6 col-sm-12 rounded border p-5 shadow">
                     <input type="text" id="name" placeholder="Enter the beneficiary name" class="form-control"/>
                     <input type="number" id="accno" placeholder="Enter the beneficiary account number" class="form-control"/>
                     <input type="text" id="ifsc" placeholder="Enter the beneficiary ifsc code" class="form-control"/>
                     <input type="text" id="upi" placeholder="Enter the beneficiary UPI" class="form-control"/>
-                    <script> 
-                    let ben1=new Beneficiary(); 
-                    </script>
+                    <input type="text" id="fetch" placeholder="Enter the data" class="form-control"/>
+                    <div class="form-check">
+                        <input type="radio" name="based" id="b1" value="name" class="form-check-inline">Holder Name
+                        <input type="radio" name="based" id="b2" value="number" class="form-check-inline">Holder AccountNumber
+                        <input type="radio" name="based" id="b3" value="ifsc" class="form-check-inline">Holder IFSC
+                        <input type="radio" name="based" id="b4" value="upi" class="form-check-inline">UPI
+                    </div>
                     <div class="row justify-content-around my-4">
-                        <button class="btn btn-outline-primary badge-pill" onclick="ben1.setdata()">Create</button>
+                        <!--<button class="btn btn-outline-primary badge-pill" onclick="ben1.setdata()">Create</button>
                         <button class="btn btn-outline-primary badge-pill" onclick="account.insert(ben1)">Add</button>
-                        <button class="btn btn-outline-dark badge-pill" onclick="account.traverse()">list</button>
+                        <button class="btn btn-outline-dark badge-pill" onclick="account.traverse()">list</button>-->
+                        <button class="btn btn-outline-primary badge-pill" onclick="insert()">Add</button>
+                        <button class="btn btn-outline-dark badge-pill" onclick="traverse()">list</button>
+                        <button class="btn btn-outline-success badge-pill" onclick="read()">Read by Index</button>
+                        <button class="btn btn-outline-warning badge-pill" onclick="read(Number(document.getElementById('fetch').value))">Read by AccountNumber</button>
+                        <button class="btn btn-outline-light text-dark badge-pill" onclick="sort()">Order</button>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <hr class="my-lg-4"/>
+            <div class="row justify-content-around">
                 
-                    <div id="show"></div>
+                    <div id="show">
+                    </div>
                 
             </div>
         </div>
