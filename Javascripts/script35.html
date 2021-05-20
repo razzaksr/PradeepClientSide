@@ -11,20 +11,26 @@
         <script>
             <!--
                 let obj=null;
-                
+                let repeat;
+
                 function beginning()
                 {
                     obj=document.getElementById('hai');
                     obj.style.position='relative';
                     obj.style.left='10px';
-                    obj.style.top='0px';
                     obj.src="fire4.jfif";
                 }
 
                 function dosome()
                 {
                     obj.style.left=parseInt(obj.style.left)+ 20 + 'px';
-                    obj.style.top=parseInt(obj.style.top)+ 20 + 'px';
+                    repeat=setTimeout(dosome,20);
+                }
+
+                function stopsome()
+                {
+                    clearTimeout(repeat);
+                    //obj.style.left='10px';
                 }
 
                 window.onload=beginning;
@@ -36,6 +42,7 @@
             Javascript needs to be installed
         </noscript>
         <button class="btn btn-outline-info" onclick="dosome()">Animate</button>
+        <button class="btn btn-outline-info" onclick="stopsome()">Disable Animate</button>
         <br/>
         <img src="#" id="hai" class="rounded"/>
         

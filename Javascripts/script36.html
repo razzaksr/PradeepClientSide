@@ -10,24 +10,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script>
             <!--
-                let obj=null;
-                
-                function beginning()
-                {
-                    obj=document.getElementById('hai');
-                    obj.style.position='relative';
-                    obj.style.left='10px';
-                    obj.style.top='0px';
-                    obj.src="fire4.jfif";
-                }
-
-                function dosome()
-                {
-                    obj.style.left=parseInt(obj.style.left)+ 20 + 'px';
-                    obj.style.top=parseInt(obj.style.top)+ 20 + 'px';
-                }
-
-                window.onload=beginning;
+                let hai={"model":"epson","price":29800.45,"lamp":3000,"iswifi":true};
+                document.write("<table class='rounded shadow border table-striped'><thead class='thead-dark'><tr><th>Model</th><th>Cost</th><th>Lamp life</th><th>Wifi enable</th></tr></thead><tbody><tr><td>"+hai['model']+"</td><td>"+hai.price+"</td><td>"+hai.lamp+"</td><td>"+hai.iswifi+"</td></tr></tbody></table>");
             //-->
         </script>
     </head>
@@ -35,9 +19,7 @@
         <noscript>
             Javascript needs to be installed
         </noscript>
-        <button class="btn btn-outline-info" onclick="dosome()">Animate</button>
-        <br/>
-        <img src="#" id="hai" class="rounded"/>
+        
         
         
 

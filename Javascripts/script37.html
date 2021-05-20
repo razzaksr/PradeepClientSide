@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Script types Demonstration</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+            <!--
+                let hai={};
+                function add()
+                {
+                    let a=document.getElementById('model');
+                    let b=document.getElementById('ram');
+                    let c=document.getElementById('ssd');
+                    let d=document.getElementById('cost');
+                    hai[a.id]=a.value;hai[b.id]=Number(b.value);
+                    hai[c.id]=Number(c.value);hai[d.id]=Number(d.value);
+                    alert("JSON created");
+                }
+                function list()
+                {
+                    document.write("<table class='rounded shadow border table-striped'><thead class='thead-dark'><tr><th>Model</th><th>RAM</th><th>SSD</th><th>PRICE</th></tr></thead><tbody><tr><td>"+hai['model']+"</td><td>"+hai.ram+"</td><td>"+hai.ssd+"</td><td>"+hai.cost+"</td></tr></tbody></table>");
+                }
+            //-->
+        </script>
+    </head>
+    <body>
+        <noscript>
+            Javascript needs to be installed
+        </noscript>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <input type="text" id="model" placeholder="Laptop Model" class="form-control">
+                <input type="text" id="ram" placeholder="Laptop RAM" class="form-control">
+                <input type="text" id="ssd" placeholder="Laptop SSD" class="form-control">
+                <input type="text" id="cost" placeholder="Laptop Price" class="form-control">
+
+                <div class="roe justify-content-around">
+                    <button class="btn btn-outline-dark" onclick="add()">ADD JSON</button>
+                    <button class="btn btn-outline-dark" onclick="list()">VIEW JSON</button>
+                </div>
+
+            </div>
+        </div>
+        
+
+    </body>
+</html>
