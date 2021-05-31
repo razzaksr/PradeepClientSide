@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Query Two</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#ib").click(function(){
+                    $("img").attr("src","java.png");
+                })
+                $("#ib").dblclick(function(){
+                    $("img").removeAttr("width");
+                })
+                $("button").on({
+                    click:function(){
+                    $("p").text("Button clicked");
+                },
+                dblclick:function(){
+                    $("p").text("Button double clicked");
+                },
+                mouseenter:function(){
+                    //$("p").text("Mouse Entered");
+                    $("p").show();
+                },
+                mouseleave:function(){
+                    //$("p").text("Mouse Left");
+                    $("p").hide();
+                }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <p style="color:red">Hello</p>
+        <button>DoSome</button>
+        <img width="500px" height="200px"/>
+        <button id="ib">Image manipulate</button>
+    </body>
+</html>
